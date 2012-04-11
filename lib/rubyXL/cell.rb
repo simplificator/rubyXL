@@ -29,7 +29,16 @@ module RubyXL
       if !@value.is_a?(String)
         if @workbook.num_fmts
           num_fmt_id = xf_id()[:numFmtId]
-          tmp_num_fmt = @workbook.num_fmts[:numFmt].select { |f| f[:attributes][:numFmtId] == num_fmt_id }[0]
+          
+	        # dirty "patch" aimed to show the problem, but is should be handled differently, I believe
+          l = if ::Hash === @workbook.num_fmts[:numFmt]
+            [@workbook.num_fmts[:numFmt]]
+          else
+            # we assume it is already an array
+            @workbook.num_fmts[:numFmt]
+          end
+
+          tmp_num_fmt = l.select { |f| f[:attributes][:numFmtId] == num_fmt_id }[0]
           num_fmt = (tmp_num_fmt &&tmp_num_fmt[:attributes] && tmp_num_fmt[:attributes][:formatCode]) ? tmp_num_fmt[:attributes][:formatCode] : nil
           if num_fmt && workbook.date_num_fmt?(num_fmt)
             return true
