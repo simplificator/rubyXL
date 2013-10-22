@@ -68,7 +68,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.0"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
       s.add_development_dependency(%q<nokogiri>, [">= 1.4.4"])
-      s.add_development_dependency(%q<rubyzip>, [">= 0.9.4"])
+      s.add_development_dependency(%q<rubyzip>, [">= 1.0.0"])
       s.add_development_dependency(%q<rspec>, [">= 1.3.4"])
     else
       s.add_dependency(%q<shoulda>, [">= 0"])
@@ -76,7 +76,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<jeweler>, ["~> 1.6.0"])
       s.add_dependency(%q<rcov>, [">= 0"])
       s.add_dependency(%q<nokogiri>, [">= 1.4.4"])
-      s.add_dependency(%q<rubyzip>, [">= 0.9.4"])
+      s.add_dependency(%q<rubyzip>, [">= 1.0.0"])
       s.add_dependency(%q<rspec>, [">= 1.3.4"])
     end
   else
@@ -85,7 +85,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<jeweler>, ["~> 1.6.0"])
     s.add_dependency(%q<rcov>, [">= 0"])
     s.add_dependency(%q<nokogiri>, [">= 1.4.4"])
-    s.add_dependency(%q<rubyzip>, [">= 0.9.4"])
+    s.add_dependency(%q<rubyzip>, [">= 1.0.0"])
     s.add_dependency(%q<rspec>, [">= 1.3.4"])
   end
 end
