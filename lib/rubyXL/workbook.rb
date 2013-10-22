@@ -104,7 +104,7 @@ module RubyXL
       zippath = File.join(dirpath, filename + '.zip')
       File.unlink(zippath) if File.exists?(zippath)
       FileUtils.mkdir_p(File.join(dirpath,zippath))
-      Zip::ZipFile.open(zippath, Zip::ZipFile::CREATE) do |zipfile|
+      Zip::File.open(zippath, Zip::File::CREATE) do |zipfile|
         writer = Writer::ContentTypesWriter.new(dirpath,self)
         zipfile.get_output_stream('[Content_Types].xml') {|f| f.puts(writer.write())}
 
